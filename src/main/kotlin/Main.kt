@@ -6,11 +6,11 @@ fun main() {
     val isOften = true
     var totalPrice = 0.00
 
-    if (amount > 1_000 && amount <= 10_000)
-        totalPrice = amount - discountStandart
+    totalPrice = if (amount > 1_000 && amount <= 10_000)
+         amount - discountStandart
     else if (amount > 10000)
-        totalPrice = amount - amount * discountFive
-    else totalPrice = amount
+        amount - amount * discountFive
+    else amount
 
     if (isOften == true)
         totalPrice = totalPrice - totalPrice * discountOfOften
